@@ -1,0 +1,74 @@
+   // to find pythagoran triplets in array in O(N^2)
+
+#include <iostream>
+#include<bits/stdc++.h>
+#include<boost/multiprecision/cpp_int.hpp>
+using namespace std;
+using namespace boost::multiprecision;
+#define ll long long
+void input(vector<ll int> &v,int len)
+{
+    for(int i=0;i<len;i++)
+    {
+        int ele;
+        cin>>ele;
+        v.push_back(ele);
+    }
+}
+void sq(vector<ll int> &v, int n, vector<ll int> &vecsq)
+{
+    for(int i=0;i<n;i++)
+    {
+        ll int x= (v[i]*v[i]);
+        vecsq.push_back(x);
+    }
+}
+int main() {
+	//code
+	int test;
+	cin>>test;
+	while(test--)
+	{
+	    int len,cnt=0;
+	    cin>>len;
+	    vector<ll int> v;
+	    input(v,len);                                       //vector input
+	    vector<ll int> vecsq;                                // vector of squares of number
+	    sq(v,len,vecsq);                                          //insertion of squares in vecsq
+	    sort(vecsq.begin(),vecsq.end());                     //sort the square qrray
+	    for(int i=(vecsq.size()-1);i>1;i--)
+	    {
+	        int cursum=vecsq[i];
+	        int l=0,r=i-1;
+	        while(l<r)
+	        {
+	            if(vecsq[l]+vecsq[r]== cursum)              // find pair with sum=cursum 
+	            {
+	                cnt++;
+	                break;
+	            }
+	            else
+	            {
+	                if(vecsq[l]+vecsq[r] > cursum)
+	                {
+	                    r--;
+	                }
+	                else
+	                {
+	                    l++;
+	                }
+	            }
+	        }
+	        
+	    }
+	    if(cnt>0)
+	    {
+	        cout<<"Yes"<<endl;
+	    }
+	    else
+	    {
+	        cout<<"No"<<endl;
+	    }
+	}
+	return 0;
+}
