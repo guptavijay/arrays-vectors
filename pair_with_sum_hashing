@@ -1,3 +1,7 @@
+
+      // if there exist a pair with given sum in O(N) using hashing.
+
+
 #include <iostream>
 #include<bits/stdc++.h>
 #include<boost/multiprecision/cpp_int.hpp>
