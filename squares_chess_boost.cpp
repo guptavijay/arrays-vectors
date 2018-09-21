@@ -1,5 +1,7 @@
 //boost library
 
+    // squares in N*N matrix or chess
+
 #include <iostream>
 #include<bits/stdc++.h>
 #include<boost/multiprecision/cpp_int.hpp>
