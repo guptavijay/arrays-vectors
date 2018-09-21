@@ -17,12 +17,12 @@ int main() {
 	    int n;
 	    cin>>n;
 	    bool arr[n+1];
-	    memset(arr,true,sizeof(arr));  //set all array elements to true
-	    for(int i=2;(i*i<=n);i++)     // start with 2
+	    memset(arr,true,sizeof(arr));                         //set all array elements to true
+	    for(int i=2;(i*i<=n);i++)                              // start with 2
 	    {
 	        if(arr[i])
 	        {
-	            for(int j=i*2;j<=n;j=j+i)    //mark all multiples to false
+	            for(int j=i*2;j<=n;j=j+i)                           //mark all multiples to false
 	            {
 	                arr[j]=false;
 	            }
